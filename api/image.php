@@ -34,6 +34,12 @@ switch ($type) {
 if (!file_exists($image)) {
     die(json_encode(["done" => false, "msg" => "Cover does not exist."]));
 }
+
+// Set caching headers
+$expires = 60 * 60 * 24 * 30; // 30 days (adjust as needed)
+header("Cache-Control: public, max-age={$expires}");
+header("Expires: " . gmdate('D, d M Y H:i:s', time() + $expires) . ' GMT');
+
 header("Content-Type: image/jpeg");
 header("Content-Length: " . filesize($image));
 readfile($image);

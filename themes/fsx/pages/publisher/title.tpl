@@ -50,8 +50,8 @@
                 </label>
             </div>
             <div class="col-span-2">
-                <img class="w-full" id="coverPreview" {if isset($res) && !empty($res.cover)}src="{$config.url}api/image/{$res.cover}/title"
-                    {/if}>
+                <img class="w-full" id="coverPreview"
+                    {if isset($res) && !empty($res.cover)}src="{$config.url}api/image/{$res.cover}/title" {/if}>
                 <input type="text" name="cover" class="hidden">
             </div>
             <div class="col-span-4"></div>
@@ -138,6 +138,10 @@
 
                 <p><b>Genres</b></p>
                 <div class="w-full grid grid-cols-5 gap-2" id="genreDiv">
+                </div>
+
+                <p><b>Demographic</b> (Only for Mangas)</p>
+                <div class="w-full grid grid-cols-5 gap-2" id="demographicDiv">
                 </div>
             </div>
         </div>

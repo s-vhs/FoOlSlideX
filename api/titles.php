@@ -28,7 +28,7 @@ $titles = $db["projects"]->createQueryBuilder()
     ->fetch();
 
 $pagis = [];
-$totalPages = $db["projects"]->count() / $perpage;
+$totalPages = ceil($db["projects"]->count() / $perpage);
 for ($i = 0; $i < $totalPages; $i++) {
     array_push($pagis, $i + 1);
 }

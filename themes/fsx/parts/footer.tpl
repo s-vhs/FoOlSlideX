@@ -5,10 +5,12 @@
         <span class="text-sm sm:text-center">
             Copyright &copy; {date("Y")} <a href="{$config.url}"
                 class="hover:underline text-blue-600">{$config.title}</a>.
-            Proudly powered by <a href="https://github.com/saintly2k/FoOlSlideX" target="_blank"
-                class="hover:underline text-blue-600">FoOlSlideX</a>
+            Proudly powered by <a href="https://github.com/H33Tx/KEngine" target="_blank"
+                class="hover:underline text-blue-600">KEngine</a>
             <span
-                class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 dark:bg-blue-900 dark:text-blue-300">v{$version}</span>
+                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 dark:bg-blue-900 dark:text-blue-300">v{$version}</span>
+            and <a href="https://github.com/saintly2k/FoOlSlideX" target="_blank"
+                class="hover:underline text-blue-600">FoOlSlideX</a>
         </span>
         <ul class="flex flex-wrap items-center mt-2 text-sm font-medium sm:mt-0 space-x-4">
             {if empty($menu)}

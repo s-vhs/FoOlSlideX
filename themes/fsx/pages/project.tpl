@@ -142,23 +142,28 @@
                         {/if}
                         {if !empty($project.tags.format) || !empty($project.tags.genre) || !empty($project.tags.theme) || !empty($project.tags.warnings)}
                             <div class="grid grid-cols-2 gap-x-2 mt-2" id="tags">
+                                {if !empty($project.tags.demographic)}
+                                    <div class="col-span-1" id="demographicDiv">
+                                        <b>Demographic:</b>
+                                    </div>
+                                {/if}
                                 {if !empty($project.tags.format)}
-                                    <div class="col-span-1">
+                                    <div class="col-span-1" id="formatDiv">
                                         <b>Formats:</b>
                                     </div>
                                 {/if}
                                 {if !empty($project.tags.genre)}
-                                    <div class="col-span-1">
+                                    <div class="col-span-1" id="genreDiv">
                                         <b>Genres:</b>
                                     </div>
                                 {/if}
                                 {if !empty($project.tags.theme)}
-                                    <div class="col-span-1">
+                                    <div class="col-span-1" id="themeDiv">
                                         <b>Themes:</b>
                                     </div>
                                 {/if}
                                 {if !empty($project.tags.warnings)}
-                                    <div class="col-span-1">
+                                    <div class="col-span-1" id="warningsDiv">
                                         <b>Warnings:</b>
                                     </div>
                                 {/if}

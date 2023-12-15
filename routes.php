@@ -51,7 +51,6 @@ $customRoutes = [
 
     // Assets
     ["get", "/instantclick", "views/assets/instantclick.php"],
-    ["any", "/font", "views/assets/font.php"],
 
     // Any?
     ["any", "/404", "views/404.php"],

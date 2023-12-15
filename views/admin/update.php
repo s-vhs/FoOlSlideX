@@ -8,10 +8,19 @@ if (!$logged || $user["level"] > 10) {
     die("No u");
 }
 
-$gitver = file_get_contents("https://raw.githubusercontent.com/saintly2k/FoOlSlideX/master/version.txt");
-$devver = file_get_contents("https://raw.githubusercontent.com/saintly2k/FoOlSlideX/dev/version.txt");
-$smarty->assign("gitver", $gitver);
-$smarty->assign("devver", $devver);
+$kengine = [
+    "gitver" => file_get_contents("https://raw.githubusercontent.com/H33Tx/KEngine/master/version.txt"),
+    "devver" => file_get_contents("https://raw.githubusercontent.com/H33Tx/KEngine/dev/version.txt"),
+];
+
+$foolslidex = [
+    "version" => file_get_contents(ROOT . "system/themes/FoOlSlideX/version.txt"),
+    "gitver" => file_get_contents("https://raw.githubusercontent.com/saintly2k/FoOlSlideX/master/version.txt"),
+    "devver" => file_get_contents("https://raw.githubusercontent.com/saintly2k/FoOlSlideX/dev/version.txt"),
+];
+
+$smarty->assign("kengine", $kengine);
+$smarty->assign("foolslidex", $foolslidex);
 
 $smarty->display("parts/head.tpl");
 $smarty->display("parts/header.tpl");

@@ -42,6 +42,7 @@ switch ($action) {
                 $warnings = isset($_POST["warnings"]) && is_array($_POST["warnings"]) ? $_POST["warnings"] : [];
                 $themes = isset($_POST["theme"]) && is_array($_POST["theme"]) ? $_POST["theme"] : [];
                 $genres = isset($_POST["genre"]) && is_array($_POST["genre"]) ? $_POST["genre"] : [];
+                $demographics = isset($_POST["demographic"]) && is_array($_POST["demographic"]) ? $_POST["demographic"] : [];
 
                 if (empty($title)) {
                     die(json_encode(["done" => false, "msg" => "Requires Title."]));
@@ -59,6 +60,7 @@ switch ($action) {
                 processAndTrimArray($warnings);
                 processAndTrimArray($themes);
                 processAndTrimArray($genres);
+                processAndTrimArray($demographics);
 
                 // Check if ID is null or not
                 if (is_null($id)) {
@@ -123,6 +125,7 @@ switch ($action) {
                         "genre" => $genres,
                         "theme" => $themes,
                         "warnings" => $warnings,
+                        "demographic" => $demographics,
                     ],
                     "updated" => [
                         "user" => $user["id"],

@@ -11,7 +11,7 @@ if ($page < 1) {
 }
 
 /**/
-$perpage = $theme["config"]["perpage"]["title"];
+/*$perpage = $theme["config"]["perpage"]["title"];
 $skip = ($page - 1) * $perpage;
 
 $titles = $db["projects"]->createQueryBuilder()
@@ -23,12 +23,13 @@ $titles = $db["projects"]->createQueryBuilder()
     ->fetch();
 
 $pagis = [];
-$totalPages = $db["projects"]->count() / $perpage;
+$totalPages = ceil($db["projects"]->count() / $perpage);
 for ($i = 0; $i < $totalPages; $i++) {
     array_push($pagis, $i + 1);
 }
 // $smarty->assign("projects", $titles);
-$smarty->assign("pagination", $pagis);
+$smarty->assign("totalpages", $totalPages);
+$smarty->assign("pagination", $pagis);*/
 /**/
 
 $smarty->assign("pageTitle", titlify("Projects - Page " . $page, $config["divider"], $config["title"]));

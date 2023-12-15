@@ -24,11 +24,11 @@ $theme = [
     "config" => [
         "theme" => "fsx",
         "last" => [
-            "title" => 5,
+            "title" => 6,
             "chapter" => 20,
         ],
         "perpage" => [
-            "title" => 15,
+            "title" => 18,
             "chapter" => 50,
         ],
         "sleek" => [

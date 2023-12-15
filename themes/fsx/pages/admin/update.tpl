@@ -23,15 +23,27 @@
 </nav>
 
 <div>
-    <p class="text-2xl">Update-Center</p>
+    <p class="text-2xl mb-2">Update-Center</p>
+    <p class="text-xl">KEngine</p>
     <p>Your version: <span
-            class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 dark:bg-blue-900 dark:text-blue-300">v{$version}</span>
+            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 dark:bg-blue-900 dark:text-blue-300">v{$version}</span>
     </p>
     <p>Latest stable: <span
-            class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 dark:bg-green-900 dark:text-green-300">v{$gitver}</span>
+            class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 dark:bg-green-900 dark:text-green-300">v{$kengine.gitver}</span>
     </p>
     <p>Latest dev: <span
-            class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 dark:bg-yellow-900 dark:text-yellow-300">v{$devver}</span>
+            class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 dark:bg-yellow-900 dark:text-yellow-300">v{$kengine.devver}</span>
+    </p>
+
+    <p class="text-xl mt-2">FoOlSlideX</p>
+    <p>Your version: <span
+            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 dark:bg-blue-900 dark:text-blue-300">v{$foolslidex.version}</span>
+    </p>
+    <p>Latest stable: <span
+            class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 dark:bg-green-900 dark:text-green-300">v{$foolslidex.gitver}</span>
+    </p>
+    <p>Latest dev: <span
+            class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 dark:bg-yellow-900 dark:text-yellow-300">v{$foolslidex.devver}</span>
     </p>
 </div>
 

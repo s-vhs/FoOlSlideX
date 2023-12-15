@@ -32,8 +32,13 @@
         {/if}
     </p>
     <div class="grid grid-cols-6 gap-2 my-2" id="titlesDiv">
-        <div class="col-span-6" id="loadingTagsText">Loading titles... <a href="#" class="text-blue-500 hover:underline dark:text-blue-600" onclick="getTitles()">Try again!</a></div>
+        <div class="col-span-6" id="loadingTagsText">Loading titles... <a href="#"
+                class="text-blue-500 hover:underline dark:text-blue-600" onclick="getTitles()">Try again!</a></div>
     </div>
+    <nav class="my-2">
+        <ul class="inline-flex -space-x-px text-sm" id="paginationDiv">
+        </ul>
+    </nav>
 </div>
 
 <script>
@@ -63,6 +68,16 @@
                     });
                 }
 
+                $("#paginationDiv").empty();
+                const paginationDiv = document.getElementById("paginationDiv");
+                if (paginationDiv) {
+                    for (let p = 1; p <= data.totalpages; p++) {
+                        console.log("Pagination: " + p);
+                        const pagination = createPaginationElement(p);
+                        paginationDiv.appendChild(pagination);
+                    }
+                }
+
                 $("#loadingTagsText").addClass("hidden");
             },
             error: function(xhr, status, error) {
@@ -72,6 +87,24 @@
     }
 
     getTitles();
+
+    function createPaginationElement(p) {
+        const pagiDiv = document.createElement("li");
+        const pagiLink = document.createElement("a");
+
+        if (p == {$page}) {
+        pagiLink.className =
+            "flex items-center justify-center px-3 h-8 border border-gray-300 dark:border-gray-700 text-blue-600 dark:text-white dark:bg-gray-700 bg-blue-50 hover:bg-blue-100 hover:text-blue-700";
+    } else {
+        pagiLink.className =
+            "flex items-center justify-center px-3 h-8 border border-gray-300 dark:border-gray-700 leading-tight text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white";
+        pagiLink.href = "{$config.url}projects/" + p;
+    }
+    pagiLink.textContent = p;
+
+    pagiDiv.appendChild(pagiLink);
+    return (pagiDiv);
+    }
 
     function createDynamicCard(item) {
         const cardDiv = document.createElement('div');
@@ -107,7 +140,14 @@
                 statusClasses = 'text-white bg-orange-500 dark:text-orange-800 dark:bg-orange-200';
                 statusText = 'Ongoing';
                 break;
-                // Add cases for other statuses...
+            case 3:
+                statusClasses = "text-gray-600 bg-gray-200 dark:text-gray-800 dark:bg-gray-200";
+                statusText = "Hiatus";
+                break;
+            case 4:
+                statusClasses = "text-white bg-green-500 dark:text-green-800 dark:bg-green-200";
+                statusText = "Completed";
+                break;
             default:
                 statusClasses = 'text-white bg-red-500 dark:text-red-800 dark:bg-red-200';
                 statusText = 'Cancelled';
